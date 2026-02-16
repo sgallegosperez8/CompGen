@@ -1,2 +1,4 @@
 # CompGen
-CompGen Labs
+CompGen Assignments and Labs are in their designated folders. 
+
+
