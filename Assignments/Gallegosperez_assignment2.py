@@ -7,11 +7,13 @@ for record in SeqIO.parse("Assignment2_refgenome.fasta", "fasta"):
     seq = record.seq
 
 
-s_array = sorted([seq[i:] for i in range(len(seq))])
+def suffixArray(s):
+    suffixes = [(s[i:], i) for i in range(len(s))]
+    suffixes.sort(key=lambda x: x[0])
 
-s_array[3]
+    return [s[1] for s in suffixes]
 
-
+suffixArray('banana')
     
 
 
