@@ -1,6 +1,7 @@
 # CompGen
 Computational Genomic Projects 
-##1: HMM BaseCaller and FastQC
+
+## 1: HMM BaseCaller and FastQC
 
 Created a program that took an CSV file containing normalized fluorescent intensitites for each nucleotide position in each read as input and used the Viterbi algorithm to compute the most likely sequence of nucleotides for each read in FASTA format. The HMM packages in Python (numpy, HMM, pandas, matplotlib). ​Now use the CSV file under Assignment 1 (Files->Assignment Files->assignment1.csv). 
 
