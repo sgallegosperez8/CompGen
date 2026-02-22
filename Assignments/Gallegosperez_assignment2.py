@@ -1,3 +1,4 @@
+import bisect
 from Bio import SeqIO
 
 
@@ -10,10 +11,26 @@ for record in SeqIO.parse("Assignment2_refgenome.fasta", "fasta"):
 def suffixArray(s):
     suffixes = [(s[i:], i) for i in range(len(s))]
     suffixes.sort(key=lambda x: x[0])
-
+    suffixes
     return [s[1] for s in suffixes]
 
-suffixArray('banana')
+suffixa=suffixArray('banana')
+len(suffixa)
+sorted(suffixa)
+
+
+target = 'na'
+i=0
+
+#creating while loop until false
+while i < len(suffixa):
+    print(suffixa[i])
+    i +=1
+
+
+
+
+
     
 
 
