@@ -1,5 +1,4 @@
-# CompGen
-Computational Genomic Projects 
+# Computational Genomic Projects 
 
 ## 1: [HMM BaseCaller and FastQC](https://github.com/sgallegosperez8/CompGen/tree/main/Projects/HMM-BaseCaller-and-FastQC)
 
