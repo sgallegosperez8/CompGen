@@ -18,6 +18,9 @@ Note what it’s doing – iterating over 1 – length of the string s; then sor
 
 Please submit your code, and output file with all indices (locations of match) for the input files provided (you'll find this under Assignment Files - Assignment2_refgenome.fasta, Assignment2_read.fasta).
 
-## 3: [Small Genome Assembly: QualityQC, Trimming and Small Genome Assembly](https://github.com/sgallegosperez8/CompGen/tree/main/Projects/suffix-tree_binary-search)
-Find your assigned genome from SRA - full list is provided below; just click on your name and use that particular whole genome sequencing run. Analyze the FASTQ files (recall you'll have to download the archive using wget, then use fastq-dump to convert the SRA file to fastq first) using your own implementation of FASTQC (Assignment 1), and provide the output from your tool/code (figure/output/table). Discuss the Q-score distributions (or any other quality metrics) that you glean information about - note you will not receive any points if you don't discuss your results (10 points).
+## 3: [Small Genome Assembly, Alignment and Variant Calling](https://github.com/sgallegosperez8/CompGen/tree/main/Projects/suffix-tree_binary-search)
+With the reference genome of H5N1, from the SRA. 
+
+QualityQC, Trimming and Small Genome Assembly
+
 Assemble the above genome using the same k-mer size using (a) velvet (https://github.com/dzerbino/velvet Links to an external site.), (b) SPADES (https://github.com/ablab/spades Links to an external site.). Then compare the final assemblies with respect to a reference genome for your species (see full list of species below) using QUAST. Discuss the assemblies with respect to the 3C criteria (completeness, contiguity, and correctness) - once again, note that you will not receive any points if you don't discuss your results (40 points). Submit your QUAST output (as .html file) along with a Word/TeX file with your discussion. Using https://www.ncbi.nlm.nih.gov/sra/SRX32003758[accn] 
