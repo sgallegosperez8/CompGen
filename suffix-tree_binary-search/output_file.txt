@@ -1,0 +1,1 @@
+Reference genome has read pattern GTTCC at positions: [1082, 1760, 1260, 781]

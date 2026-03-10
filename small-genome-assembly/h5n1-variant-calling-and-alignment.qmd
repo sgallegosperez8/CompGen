@@ -1,0 +1,38 @@
+Samantha Galllegos Perez
+
+## Lab 04
+
+Appriopiate tools that need to downloaded. 
+
+- **bwa-mem2:** map DNA sequence reads (70bp to a few megabases) against a large reference genome, such as the human genome.
+- **faidx:**
+- **samtools:**
+- **bcftools:**
+- **htslib:**
+- **GATK:**
+
+
+```bash
+mkdir data-biolo
+
+```
+
+```bash
+mkdir data-biolo
+
+```
+
+```bash
+mkdir data-biolo
+
+```
+
+```bash
+mkdir data-biolo
+
+```
+
+```bash
+mkdir data-biolo
+
+```
