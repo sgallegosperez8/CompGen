@@ -1,0 +1,60 @@
+configfile:"/home/exouser/labs/lab01/var_calling_config.yaml"
+
+SAMPLES = config["samples"]
+
+#grabbed 
+
+rule all:
+    input:
+        "/home/exouser/labs/lab01/vcf_f/sars_cov2.vcf"
+
+#see if we can add trimmomatic or fastqc here 
+rule bem_mem2:
+    input:
+        ref = "/home/exouser/labs/lab01/sars_cov.fna.gz",
+        fasta = "/home/exouser/labs/lab01/{sample}"
+    output:
+        "/home/exouser/labs/lab01/sam_f/{sample}.sam"
+
+    shell:
+        """
+        bwa-mem2.sse41 index {input.ref}
+        bwa-mem2.sse41 mem {input.ref} {input.fasta} > {output}
+        """
+
+rule sam_sort1:
+    input:
+        "/home/exouser/labs/lab01/sam_f/{sample}.sam"
+    output:
+        "/home/exouser/labs/lab01/bam_f/{sample}.bam"
+    shell:
+        "samtools view -S -b {input} > {output}"
+
+
+rule sam_sort2:
+    input:
+        "/home/exouser/labs/lab01/bam_f/{sample}.bam"
+    output:
+        "/home/exouser/labs/lab01/bam_sorted/{sample}.sorted.bam"
+    shell:
+        """
+        samtools view {input} | head
+        samtools sort {input} -o {output}
+        samtools index {output}
+        """
+
+rule final:
+    input:
+        expand("/home/exouser/labs/lab01/bam_sorted/{all_f}.sorted.bam",all_f=SAMPLES)
+    output:
+        "/home/exouser/labs/lab01/vcf_f/sars_cov2.vcf"
+
+    shell:
+        """
+        gunzip /home/exouser/labs/lab01/sars_cov.fna.gz  #gunzip refgenom if ends with .fna.gz
+        bcftools mpileup -f /home/exouser/labs/lab01/sars_cov.fna {input} | bcftools call -mv - Ov --ploidy-file samples.ploidy -o sars_cov.bcf
+        bcftools view sars_cov.bcf > {output}
+        """
+
+
+        
